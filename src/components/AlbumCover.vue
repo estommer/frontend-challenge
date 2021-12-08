@@ -19,5 +19,7 @@ export default {
   width: 170px;
   height: 170px;
   background-color: gray;
+  margin: auto;
+  margin-right: 20px;
 }
 </style>

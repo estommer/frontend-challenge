@@ -1,9 +1,11 @@
 <template>
-  <div class="album-card">
-    <h1>{{title}}</h1>
+  <article class="album-card">
     <album-cover :cover = "cover"/>
-    <album-info :release = "release" :price = "price"/>
-  </div>
+    <div class="album-card__info">
+      <h1>{{title}}</h1>
+      <album-info :release = "release" :price = "price"/>
+    </div>
+  </article>
 </template>
 
 <script>
@@ -35,8 +37,30 @@ export default {
 
 <style scoped lang="scss">
 .album-card {
-  width: 400px;
-  height: 400px;
-  background-color: orange;
+  width: 600px;
+  height: 300px;
+  margin: 0.75rem;
+  padding: 20px;
+
+  border-radius: 14px;
+  background: #ffffff;
+
+  display: flex;
+
+  &__info {
+    width: 100%;
+    margin: auto;
+    text-align: left;
+  }
+
+  @media screen and (max-width: 600px) {
+    display: block;
+		height: initial;
+    width: 100%;
+
+    &__info {
+      text-align: center;
+    }
+	}
 }
 </style>
