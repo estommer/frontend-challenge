@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <h1>Gallery</h1>
+    <h1>Top iTunes albums</h1>
     <album-gallery/>
   </div>
 </template>
