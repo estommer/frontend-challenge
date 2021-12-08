@@ -52,9 +52,14 @@ export default {
     font-size: 20px;
     cursor: pointer;
 
-    &:hover {}
+    &:hover {
+      background: linear-gradient(90deg, #abeb7a 0%, #f59b35 100%);
+      box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.04);
+    }
 
-    &:active {}
+    &:active {
+      background: linear-gradient(90deg, #9be95f 0%, #f1962d 100%);
+    }
 
   }
 }
