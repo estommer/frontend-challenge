@@ -15,3 +15,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.main {
+  text-align: center;
+  text-align: -webkit-center;
+  min-height: 100vh;
+}
+</style>
