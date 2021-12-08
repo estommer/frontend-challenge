@@ -1,12 +1,17 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+  <div class="main">
+    <h1>Gallery</h1>
+    <album-gallery/>
   </div>
 </template>
 
 <script>
+import AlbumGallery from '@/components/AlbumGallery.vue'
+
 export default {
   name: 'Home',
-  components: {}
+  components: {
+    AlbumGallery
+  }
 }
 </script>
