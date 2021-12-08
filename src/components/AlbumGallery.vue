@@ -23,16 +23,25 @@ export default {
       .then(response => response.json())
       .then(data => {
         this.albums = data.feed.entry;
-        console.log(data.feed.entry[3]);
-      });
-  }
+      })
+      .catch(error => console.log(error));
+  },
 }
 </script>
 
 <style scoped lang="scss">
 .album-gallery {
   display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
   flex-wrap: wrap;
-  background-color: #42b983;
+  margin: 20px 0 100px;
+  max-width: 1992px;
+
+  @media screen and (max-width: 1024px) {
+    padding: 0 10px;
+	}
 }
 </style>
