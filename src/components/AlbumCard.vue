@@ -53,6 +53,10 @@ export default {
     text-align: left;
   }
 
+  &:hover {
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.07);
+  }
+
   @media screen and (max-width: 600px) {
     display: block;
 		height: initial;
