@@ -1,10 +1,12 @@
 <template>
   <div class="album-info">
-    <div v-if="isInfoShown" class="album-info__text">
-      <p>Release: {{release}}</p>
-      <p>Price: {{price}}</p>
-    </div>
-    <button class="album-info__btn" @click="toggleInfo">{{isInfoShown ? 'Less' : 'More'}} info</button>
+    <transition name="appear">
+      <div v-if="isInfoShown" class="album-info__text">
+        <p>Release: {{release}}</p>
+        <p>Price: {{price}}</p>
+      </div>
+    </transition>
+    <button class="album-info__btn" @click="toggleInfo">{{isInfoShown ? 'less' : 'more'}} info</button>
   </div>
 </template>
 
@@ -60,7 +62,29 @@ export default {
     &:active {
       background: linear-gradient(90deg, #9be95f 0%, #f1962d 100%);
     }
+  }
+}
 
+.appear-enter-active { 
+  @media screen and (min-width: 600px) {
+    animation: pop-up .8s;
+	}
+}
+.appear-leave-active {
+  @media screen and (min-width: 600px) {
+    animation: pop-up .8s reverse;
+  }
+}
+
+@keyframes pop-up {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 </style>
