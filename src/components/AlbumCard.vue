@@ -1,12 +1,14 @@
 <template>
   <div class="album-card">
-    <h1>{{name}}</h1>
+    <h1>{{title}}</h1>
     <album-cover :cover = "cover"/>
+    <album-info :release = "release" :price = "price"/>
   </div>
 </template>
 
 <script>
 import AlbumCover from '@/components/AlbumCover.vue'
+import AlbumInfo from '@/components/AlbumInfo.vue'
 
 export default {
   name: 'album-card',
@@ -17,12 +19,15 @@ export default {
 		},
   },
   components: {
-    AlbumCover
+    AlbumCover,
+    AlbumInfo
   },
   data() {
     return {
-      name: this.album['im:name'].label,
-      cover: this.album['im:image'][2].label
+      title: this.album.title.label,
+      cover: this.album['im:image'][2].label,
+      release: this.album['im:releaseDate'].attributes.label,
+      price: this.album['im:price'].label
     }
   },
 }
